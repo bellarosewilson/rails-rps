@@ -1,3 +1,4 @@
+# app/controllers/game_controller.rb
 class GameController < ApplicationController
   def rules
     render :homepage
@@ -23,7 +24,6 @@ class GameController < ApplicationController
   def play(player_move)
     moves = ["rock", "paper", "scissors"]
     @comp_move = moves.sample
-
     @outcome = case [player_move, @comp_move]
                when ["rock", "rock"], ["paper", "paper"], ["scissors", "scissors"]
                  "tied"
