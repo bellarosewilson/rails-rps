@@ -1,5 +1,9 @@
 # config/routes.rb
 Rails.application.routes.draw do
+  get 'game/rock'
+  get 'game/paper'
+  get 'game/scissors'
+  get 'game/rules'
   root "game#rules"
 
   get "/rock", to: "game#rock"
