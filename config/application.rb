@@ -1,3 +1,4 @@
+# config/application.rb
 require_relative "boot"
 
 require "rails/all"
@@ -13,10 +14,12 @@ module VanillaRails7
 
     # Configuration for the application, engines, and railties goes here.
     #
-    # These settings can be overridden in specific environments using the files
-    # in config/environments, which are processed later.
-    #
+    # Example:
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Don’t generate system test files.
+    config.generators.system_tests = nil
   end
 end
+# This file is responsible for configuring your Rails application.  
