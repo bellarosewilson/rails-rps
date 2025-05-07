@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get "/paper", to: "game#paper"
   get "/scissors", to: "game#scissors"
   get "/rules", to: "game#rules"
+  
 end
