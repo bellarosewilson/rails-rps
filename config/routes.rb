@@ -1,14 +1,8 @@
-# config/routes.rb
 Rails.application.routes.draw do
-  get 'game/rock'
-  get 'game/paper'
-  get 'game/scissors'
-  get 'game/rules'
   root "game#rules"
 
   get "/rock", to: "game#rock"
   get "/paper", to: "game#paper"
   get "/scissors", to: "game#scissors"
-  get "/rules", to: "game#rules"
-  
 end
+# This code defines the routes for a Ruby on Rails application. The root route is set to the "rules" action of the "game" controller. Additionally, there are routes defined for the "rock", "paper", and "scissors" actions of the same controller.

@@ -1,7 +1,5 @@
-# app/controllers/game_controller.rb
 class GameController < ApplicationController
   def rules
-    # This will just render the rules.html.erb
   end
 
   def rock
@@ -18,24 +16,24 @@ class GameController < ApplicationController
 
   private
 
-  def play(player_choice)
-    choices = ["rock", "paper", "scissors"]
-    computer_choice = choices.sample
+  def play(player_move)
+    choices = %w[rock paper scissors]
+    computer_move = choices.sample
 
-    result = if player_choice == computer_choice
-               "It's a tie!"
-             elsif (player_choice == "rock" && computer_choice == "scissors") ||
-                   (player_choice == "paper" && computer_choice == "rock") ||
-                   (player_choice == "scissors" && computer_choice == "paper")
-               "You win!"
-             else
-               "You lose!"
-             end
+    outcome =
+      if player_move == computer_move
+        "It's a tie!"
+      elsif (player_move == "rock" && computer_move == "scissors") ||
+            (player_move == "paper" && computer_move == "rock") ||
+            (player_move == "scissors" && computer_move == "paper")
+        "You win!"
+      else
+        "You lose!"
+      end
 
-    @player_choice = player_choice
-    @computer_choice = computer_choice
-    @result = result
+    @computer_move = computer_move
+    @outcome = outcome
 
-    render :result
+    render player_move
   end
 end
